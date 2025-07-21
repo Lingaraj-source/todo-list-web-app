@@ -2,27 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div>
-        <h1>ToDo List</h1>
+    <div class="todo-box">
+        <h1>📝 ToDo List</h1>
         <div class="Input-add-dlt">
-            <input type="text" id="input-box" placeholder="Enter Task"></input>
-            <button id="btn1">ADD</button>
-            <button id="btn2">CLEAR ALL</button>
+            <input type="text" id="input-box" placeholder="Enter a task" />
+            <button id="btn1">Add</button>
+            <button id="btn2">Clear</button>
+            <button id="btn-delete-selected">Delete Selected</button>
         </div>
-
-        <ul id="list-items">
-
-        </ul>
+        <ul id="list-items"></ul>
     </div>
-
 </body>
 
 </html>

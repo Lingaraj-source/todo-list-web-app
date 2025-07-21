@@ -2,103 +2,162 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
-    background: linear-gradient(to right, #667eea, #764ba2);
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #2e2e2e;
+    transition: all 0.3s ease-in-out;
 }
-div {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+.todo-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 540px;
+    transition: transform 0.2s ease;
 }
+
+.todo-box:hover {
+    transform: scale(1.01);
+}
+
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #5f27cd;
     letter-spacing: 1px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Input-add-dlt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #b2bec3;
+    border-radius: 12px;
     font-size: 16px;
+    transition: box-shadow 0.25s, border 0.3s;
 }
 
-.Input-add-dlt{
-    display: flex;
+input[type="text"]:focus {
+    border-color: #6c5ce7;
+    outline: none;
+    box-shadow: 0 0 6px #a29bfe;
 }
 
-button#btn1 {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background-color: #00c9a7;
+button {
+    padding: 13px 18px;
     border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    transition: 0.3s;
-}
-button#btn2 {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background-color: #00c9a7;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.25s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
 }
 
-button#btn:hover {
-    background-color: #00b49f;
+#btn1 {
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+    color: white;
 }
+
+#btn2 {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+}
+
+#btn-delete-selected {
+    background: linear-gradient(to right, #00cdac, #8ddad5);
+    color: white;
+    display: none;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
 ul#list-items {
     list-style-type: none;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 ul#list-items li {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-size: 18px;
+    background: #fceff9;
+    padding: 14px 15px;
+    margin-bottom: 12px;
+    font-size: 16px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 14px;
+    border: 1px solid #ffe6fa;
     transition: background 0.3s;
 }
 
 ul#list-items li:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    background: #fce1ff;
 }
 
-/* Delete button */
-li button.delete {
-    background-color: #ff4d4d;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    padding: 5px 12px;
+.task-text {
+    flex-grow: 1;
+    color: #2d3436;
+    line-height: 1.6;
+}
+
+input.select-task {
+    transform: scale(1.3);
+    margin-right: 10px;
+    accent-color: #6c5ce7;
+}
+
+li.selected-task {
+    background-color: #ffe8f0;
+    border-color: #fca3b7;
+}
+
+button.delete,
+button.edit {
+    padding: 6px 10px;
     font-size: 14px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
+    color: #fff;
+    transition: background-color 0.25s;
 }
 
-li button.delete:hover {
-    background-color: #e63946;
+button.delete {
+    background-color: #e84118;
+}
+
+button.delete:hover {
+    background-color: #c23616;
+}
+
+button.edit {
+    background-color: #10ac84;
+    margin-left: 5px;
+}
+
+button.edit:hover {
+    background-color: #079992;
 }
