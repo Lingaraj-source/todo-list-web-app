@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.Input-add-dlt{
+    display: flex;
+}
+
+button#btn1 {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #00c9a7;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button#btn2 {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #00c9a7;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button#btn:hover {
+    background-color: #00b49f;
+}
+ul#list-items {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ul#list-items li {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+ul#list-items li:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Delete button */
+li button.delete {
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 5px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+li button.delete:hover {
+    background-color: #e63946;
+}
